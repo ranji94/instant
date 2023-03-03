@@ -19,6 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
+          repo-token: ${{ secrets.GIT_TOKEN }}
           ref: production
       - run: |
           git config user.name github-actions
@@ -26,6 +27,7 @@ jobs:
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
+          repo-token: ${{ secrets.GIT_TOKEN }}
           node-version: 16.x
 
       - name: Generate new version
