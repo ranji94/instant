@@ -19,11 +19,11 @@
      "declarationMap": true,
     "baseUrl": ".",
      "paths": {
-      "instant-library": [ "src/components/index.ts" ]
+      "instant-library": [ "src/lib/index.ts" ]
     },
     "typeRoots": [
       "node_modules/@types",
-      "src/components/index.d.ts"
+      "src/lib/index.d.ts"
     ]
   },
   "include": ["src"],

@@ -1,0 +1,8 @@
+const FETCH_STATUS = Object.freeze({
+	IDLE: 'IDLE',
+	FETCHING: 'FETCHING',
+	FETCHED: 'FETCHED',
+    FAILED: 'FAILED'
+})
+
+export { FETCH_STATUS }
