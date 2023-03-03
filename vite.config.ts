@@ -17,12 +17,12 @@ export default defineConfig((configEnv) => ({
       linters: [new EsLinter({ configEnv })],
     }),
     dts({
-      include: ['src/components/'],
+      include: ['src/lib/'],
     }),
   ],
   build: {
     lib: {
-      entry: resolve('src', 'components/index.ts'),
+      entry: resolve('src', 'lib/index.ts'),
       name: 'InstantLibrary',
       formats: ['es', 'umd'],
       fileName: (format) => `instant-library.${format}.js`,

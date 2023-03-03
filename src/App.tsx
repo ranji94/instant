@@ -1,7 +1,7 @@
 import './App.css'
 
 function App() {
-  return <div>Example lib</div>
+  return <div>Instant lib</div>
 }
 
 export default App
