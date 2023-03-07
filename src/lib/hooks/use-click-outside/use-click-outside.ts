@@ -11,8 +11,7 @@ export const useClickOutside = (refs: Reference[]) => {
 
     useEffect(() => {
         const checkIfClickedOutside = (e: Event) => 
-          setClickedOutside(isClickedOutside 
-            && refs.every((ref: Reference) => !ref.current.contains(e.target)))
+          setClickedOutside(refs.every((ref: Reference) => !ref.current.contains(e.target)))
   
         document.addEventListener("mousedown", checkIfClickedOutside)
         return () => {
@@ -20,5 +19,5 @@ export const useClickOutside = (refs: Reference[]) => {
         }
       }, [isClickedOutside])
 
-    return { isClickedOutside, setClickedOutside }
+    return { isClickedOutside }
 }
