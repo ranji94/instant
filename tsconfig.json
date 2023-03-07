@@ -19,7 +19,7 @@
      "declarationMap": true,
     "baseUrl": ".",
      "paths": {
-      "instant-library": [ "src/lib/index.ts" ]
+      "@ranji94/instant": [ "src/lib/index.ts" ]
     },
     "typeRoots": [
       "node_modules/@types",
