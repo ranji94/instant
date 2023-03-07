@@ -1,5 +1,5 @@
 {
-  "name": "instant-library",
+  "name": "@ranji94/instant",
   "private": false,
   "version": "0.0.4",
   "type": "module",
@@ -10,7 +10,9 @@
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'",
     "lint:fix": "eslint --fix 'src/**/*.{jsx,ts,tsx}'",
     "format": "prettier --write src//**/*.{ts,tsx,css} --config ./.prettierrc",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test": "vitest",
+    "coverage": "vitest run --coverage"
   },
   "husky": {
     "hooks": {
@@ -41,6 +43,11 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/react-hooks": "^8.0.1",
+    "@testing-library/user-event": "^14.4.3",
+    "@types/node": "^18.14.6",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "@typescript-eslint/eslint-plugin": "^5.54.0",
@@ -55,6 +62,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "husky": "^8.0.3",
+    "jsdom": "^21.1.0",
     "lint-staged": "^13.1.2",
     "prettier": "^2.8.4",
     "react-hooks": "^1.0.1",
@@ -62,7 +70,8 @@
     "vite": "^4.1.4",
     "vite-plugin-dts": "^2.0.2",
     "vite-plugin-linter": "^2.0.2",
-    "vite-tsconfig-paths": "^4.0.5"
+    "vite-tsconfig-paths": "^4.0.5",
+    "vitest": "^0.29.2"
   },
   "peerDependencies": {
     "react": "16.8.0 || >=17.x",

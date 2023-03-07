@@ -11,7 +11,7 @@ import * as packageJson from './package.json'
 export default defineConfig((configEnv) => ({
   plugins: [
     react(),
-    tsConfigPaths(),
+    // tsConfigPaths(),
     linterPlugin({
       include: ['./src}/**/*.{ts,tsx}'],
       linters: [new EsLinter({ configEnv })],
@@ -20,6 +20,11 @@ export default defineConfig((configEnv) => ({
       include: ['src/lib/'],
     }),
   ],
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './setup-tests.ts'
+  },
   build: {
     lib: {
       entry: resolve('src', 'lib/index.ts'),

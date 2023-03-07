@@ -7,20 +7,18 @@ interface Reference {
 }
 
 export const useClickOutside = (refs: Reference[]) => {
-    const [enabled, setEnabled] = useState<boolean>(false)
+    const [isClickedOutside, setClickedOutside] = useState<boolean>(false)
 
     useEffect(() => {
-        const checkIfClickedOutside = (e: Event) => {
-          if (enabled && refs.every((ref: Reference) => !ref.current.contains(e.target))) {
-            setEnabled(false)
-          }
-        }
+        const checkIfClickedOutside = (e: Event) => 
+          setClickedOutside(isClickedOutside 
+            && refs.every((ref: Reference) => !ref.current.contains(e.target)))
   
         document.addEventListener("mousedown", checkIfClickedOutside)
         return () => {
           document.removeEventListener("mousedown", checkIfClickedOutside)
         }
-      }, [enabled])
+      }, [isClickedOutside])
 
-    return { enabled, setEnabled }
+    return { isClickedOutside, setClickedOutside }
 }

@@ -27,6 +27,7 @@ const useFetch = (url: string, options?: RequestInit) => {
                 setStatus(FETCH_STATUS.FETCHED)
             } catch (error: any) {
                 if (error.name === 'AbortError') {
+                    setData(error.response.data)
                     setStatus(FETCH_STATUS.FAILED)
                 }
             }
